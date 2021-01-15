@@ -1,4 +1,14 @@
-import {useDispatch as _useDispatch} from 'react-redux';
+//у нас проблема-хук useDispatch не типизируется, поэтому мы его перенаправляем
+import { useDispatch as _useDispatch } from 'react-redux';
+//useDispatch здесь будет называться как _useDispatch
+
+export function useDispatch() {
+  const dispatch = _useDispatch();
+  return (ac: CurrencyReducersTypes) => {
+    dispatch(ac);
+  };
+}
+
 export enum ACTIONS_TYPE {//объект констант
   CHANGE_CURRENCY_FIELD_TYPE = 'CurrencyExchange/CHANGE_CURRENCY_FIELD_TYPE',
   CHANGE_CHANGE_ACTION = 'CurrencyExchange/CHANGE_CHANGE_ACTION',
@@ -42,7 +52,7 @@ export type ChangeCurrentCurrencyType = {
 export const changeCurrentCurrencyAC = (currentCurrency: string): ChangeCurrentCurrencyType => {
   return {
     type: ACTIONS_TYPE.CHANGE_CURRENCY_FIELD_TYPE,
-    payload: { currentCurrency:currentCurrency },
+    payload: { currentCurrency: currentCurrency },
   };
 };
 
@@ -51,12 +61,7 @@ export type CurrencyReducersTypes = ChangeCurrencyFieldType | ChangeAction | Cha
 
 
 
-export function  useDispatch() {
-  const dispatch=_useDispatch();
-  return (ac:CurrencyReducersTypes)=>{
-    dispatch(ac);
-  }
-}
+
 
 
 

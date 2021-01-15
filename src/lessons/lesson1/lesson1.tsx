@@ -1,6 +1,7 @@
 import React from 'react';
-import CurrencyEContainer from '../../containers/CurrencyExchangeContainer/CurrencyExchangeContainer';
-// import { CurrencyExchangeContainer } from '../../containers/CurrencyExchangeContainer/CurrencyExchangeContainer';
+//import { CurrencyExchangeContainer } from '../../containers/CurrencyExchangeContainer/CurrencyExchangeContainer';
+import  CurrencyExchangeContainer  from '../../containers/CurrencyExchangeContainer/CurrencyExchangeContainer';
+//поменяли для UseSelector()
 
 // Redux
 // https://tproger.ru/translations/redux-for-beginners/
@@ -23,7 +24,7 @@ import CurrencyEContainer from '../../containers/CurrencyExchangeContainer/Curre
 const Lesson1: React.FunctionComponent = () => {
   return (
     <React.Fragment>
-      <CurrencyEContainer />
+      <CurrencyExchangeContainer />
     </React.Fragment>
   );
 };

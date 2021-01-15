@@ -3,15 +3,27 @@ import API from './API';
 import './lesson_3';
 
 const Lesson3 = () => {
-    const [searchName, setSearchName] = useState('');
-    const [serachResult, setSerachResult] = useState('');
-    const [searchNameByType, setSearchNameByType] = useState('');
-    const [serachResultByType, setSerachResultByType] = useState('');
+    const [searchName, setSearchName] = useState('');//спросили
+    const [serachResult, setSerachResult] = useState('');//получили результат
+    const [searchNameByType, setSearchNameByType] = useState('');//спросили
+    const [serachResultByType, setSerachResultByType] = useState('');//получили результат
 
     const searchFilm = () => {
         API.searchFilmsByTitle(searchName)
+          .then(res=>{
+              console.log(res);
+              if(res.data.Response==='True'){//т.к. у нас не булевое значение а стринга
+                  setSerachResult(JSON.stringify(res.data.Search));//JSON.stringify-JSON-в строку
+              }else{
+                  setSerachResult(res.data.Error)
+              }
+          })
+          .catch(err=>
+          console.log(err))
     };
 
+    //здесь разгребает откуда кнопка: У первого ряда одна кнопка- у нее нет dataSet
+    //у второго ряда dataSet есть
     const searchByType = (e: React.MouseEvent<HTMLButtonElement>) => {
         const type: string = e.currentTarget.dataset.t ? e.currentTarget.dataset.t : '';
         API.searchFilmsByType(searchNameByType, type)

@@ -1,4 +1,3 @@
-
 import { ACTIONS_TYPE, CurrencyReducersTypes } from './actions';
 
 type CurrencyType = {
@@ -59,13 +58,9 @@ export const currencyReducer = (state: CurrencyState = initialState, action: Cur
         ...state,
         //@ts-ignore
         ...action.payload,
-        amountOfBYN: '',
         amountOfCurrency: '',
       }
     default:
       return state;
   }
 };
-
-
-

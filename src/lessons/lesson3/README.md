@@ -4,6 +4,11 @@
 
 Задания:
 1) Правильно зарегистрироваться на http://www.omdbapi.com;
+dollarselephant@gmail.com    Igor Yudintsev
+Вот ваш ключ: 17aff601
+Добавьте его ко всем запросам API,
+API OMDb: http://www.omdbapi.com/?i=tt3896198&apikey=17aff601
+
 2) Изучить API сайта;
 3) В API.ts в строке 6 вставить свой ключ;
 4) Реализовать логику в функциях searchFilm и searchByType в файле Lesson3.tsx, дописать логику в файле API.ts, 

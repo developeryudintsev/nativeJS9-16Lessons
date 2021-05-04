@@ -1,6 +1,6 @@
 Занятие 5 (This, function constructor, Call/Apply/Bind):
 
-Изучить ссылки в файле lesson5.ts
+Изучить ссылки в файле lesson_5.ts
 
 Задания:
 1) Решить все задачи.
